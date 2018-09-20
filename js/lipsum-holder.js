@@ -1,5 +1,5 @@
-let LoremIpsum = {
 	/* The Lorem Ipsum Standard Paragraph */
+let LoremIpsum = {
 	standard: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur soccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 	lipsumwords: ["a", "ac", "accumsan", "ad", "adipiscing",
 			"aenean", "aliquam", "aliquet", "amet", "ante", "aptent", "arcu",
@@ -108,20 +108,21 @@ window.onload = (e) => {
 		if(target[i].hasAttribute('format')) {
 			switch(target[i].getAttribute('format')) {
 				case 'word':
-					target[i].innerText = LoremIpsum.words(target[i].getAttribute('count'));
+					target[i].outerHTML = LoremIpsum.words(target[i].getAttribute('count'));
 					break;
 				case 'paragraph':
-					target[i].innerText = LoremIpsum.paragraphs(target[i].getAttribute('count'));
+					target[i].outerHTML = LoremIpsum.paragraphs(target[i].getAttribute('count'));
 					break;
 				case 'sentence':
-					target[i].innerText = LoremIpsum.sentence(target[i].getAttribute('count'));
+					target[i].outerHTML = LoremIpsum.sentences(target[i].getAttribute('count'));
 					break;
 				default:
-					target[i].innerText = LoremIpsum.standard;
+					target[i].outerHTML = LoremIpsum.standard;
 					break;
 			}
 		} else {
-			target[i].innerText = LoremIpsum.standard;
+			target[i].outerHTML = LoremIpsum.standard;
+			// target[i].parentNode.innerText = LoremIpsum.standard;
 		}
 	}
 }
