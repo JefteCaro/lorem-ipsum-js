@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewort" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Jefte Caro">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<title>Lorem Ipsum Generator - HTML Plugin</title>
+	<style type="text/css">
+		body {
+			font-family: 'Open Sans', sans-serif;
+			margin: 15px;
+		}
+		.quote {
+			padding: 15px;
+			margin: 10px 0px;
+			background-color: #eee;
+			border-left: solid 5px #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>lorem-ipsum-js</h1>
+		<h3>Lorem Ipsum generator - HTML Plugin</h3>
+
+		<h2>How to use</h2>
+		<h5>Put the script at the end of body tag</h5>
+
+		Add <code>&lt;lipsum/&gt;</code> tag inside your DOM Element
+		<pre>
+	&lt;div class="your-class"&gt;
+		&lt;lipsum/&gt;
+	&lt;/div&gt;
+
+	&lt;span class="span-class"&gt;
+	  	&lt;lipsum/&gt;
+	&lt;/span&gt;
+		</pre>
+		<h2>How it works?</h2>
+		The script will look for the <code>&lt;lipsum/&gt;</code> tag and replace it with the Lorem Ipsum Standard Paragraph:
+		<br>
+		<div class="quote">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur soccaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</div>
+
+		<h2>Format &amp; Count</h2>
+		<strong>format</strong> attribute only accepts <strong>word</strong>, <strong>sentence</strong>, and <strong>paragraph</strong>.
+		<br>
+		use the <strong>count</strong> attribute to specify unit count
+		<pre>&lt;lipsum format="word" count="10"/&gt;</pre>
+		Output:
+		<div class="quote">
+			<lipsum format="word" count="10"/>
+		</div>
+		<pre>&lt;lipsum format="sentence" count="5"/&gt;</pre>
+		Output:
+		<div class="quote">
+			<lipsum format="sentence" count="5"/>
+		</div>
+		<pre>&lt;lipsum format="paragraph" count="1"/&gt;</pre>
+		Output:
+		<div class="quote">
+			<lipsum format="paragraph" count="1"/>
+		</div>
+
+	</div>
+
+	<script src="js/lipsum-holder.min.js"></script>
+</body>
+</html>
