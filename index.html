@@ -17,6 +17,51 @@
 			background-color: #eee;
 			border-left: solid 5px #ccc;
 		}
+		.code-group {
+			display: flex;
+			flex-direction: column;
+			background: #323527;
+			padding: 15px;
+			border-radius: 5px;
+			white-space: nowrap;
+			color: #eee;
+			margin: 10px 0px;
+			overflow-y: auto;
+		}
+
+		.indent-1::before {
+			content: '\0000a0';
+			padding-left: 10px;
+		}
+		.indent-2::before {
+			content: '\0000a0';
+			padding-left: 20px;
+		}
+		.indent-3::before {
+			content: '\0000a0';
+			padding-left: 30px;
+		}
+		.indent-4::before {
+			content: '\0000a0';
+			padding-left: 40px;
+		}
+
+		.tag {
+			color: #fff;
+		}
+
+		.elem {
+			color: #ff0097;
+		}
+
+		.attr {
+			color: #9bf529;
+		}
+
+		.attr-def {
+			color: #f0f529;
+		}
+
 	</style>
 </head>
 <body>
@@ -25,19 +70,19 @@
 		<h3>Lorem Ipsum generator - HTML Plugin</h3>
 
 		<h2>How to use</h2>
-		<h5>Put the script at the end of body tag</h5>
-
+		Put the script at the end of body tag
+		<br>
 		Add <code>&lt;lipsum/&gt;</code> tag inside your DOM Element
-		<pre>
-	&lt;div class="your-class"&gt;
-		&lt;lipsum/&gt;
-	&lt;/div&gt;
-
-	&lt;span class="span-class"&gt;
-	  	&lt;lipsum/&gt;
-	&lt;/span&gt;
-		</pre>
-		<h2>How it works?</h2>
+		<div class="code-group">
+			<code>&lt;<span class="elem">div</span> <span class="attr">class</span>="<span class="attr-def">your-class</span>"&gt;</code>
+			<code class="indent-2">&lt;<span class="elem">lipsum</span>/&gt;</code>
+			<code>&lt;/<span class="elem">div</span>&gt;</code>
+			<br>
+			<code>&lt;<span class="elem">span</span> <span class="attr">class</span>="<span class="attr-def">span-class</span>"&gt;</code>
+		  	<code class="indent-2">&lt;<span class="elem">lipsum</span>/&gt;</code>
+			<code>&lt;/<span class="elem">span</span>&gt;</code>
+		</div>
+		<h2>How it works</h2>
 		The script will look for the <code>&lt;lipsum/&gt;</code> tag and replace it with the Lorem Ipsum Standard Paragraph:
 		<br>
 		<div class="quote">
@@ -48,17 +93,23 @@
 		<strong>format</strong> attribute only accepts <strong>word</strong>, <strong>sentence</strong>, and <strong>paragraph</strong>.
 		<br>
 		use the <strong>count</strong> attribute to specify unit count
-		<pre>&lt;lipsum format="word" count="10"/&gt;</pre>
+		<div class="code-group">
+			<code>&lt;<span class="elem">lipsum</span> <span class="attr">format</span>="<span class="attr-def">word</span>" <span class="attr">count</span>="<span class="attr-def">10</span>"/&gt;</code>
+		</div>
 		Output:
 		<div class="quote">
 			<lipsum format="word" count="10"/>
 		</div>
-		<pre>&lt;lipsum format="sentence" count="5"/&gt;</pre>
+		<div class="code-group">
+			<code>&lt;<span class="elem">lipsum</span> <span class="attr">format</span>="<span class="attr-def">sentence</span>" <span class="attr">count</span>="<span class="attr-def">5</span>"/&gt;</code>
+		</div>
 		Output:
 		<div class="quote">
 			<lipsum format="sentence" count="5"/>
 		</div>
-		<pre>&lt;lipsum format="paragraph" count="1"/&gt;</pre>
+		<div class="code-group">
+			<code>&lt;<span class="elem">lipsum</span> <span class="attr">format</span>="<span class="attr-def">paragraph</span>" <span class="attr">count</span>="<span class="attr-def">1</span>"/&gt;</code>
+		</div>
 		Output:
 		<div class="quote">
 			<lipsum format="paragraph" count="1"/>
